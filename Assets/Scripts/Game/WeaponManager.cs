@@ -193,12 +193,15 @@ namespace DaggerfallWorkshop.Game
 
         void Start()
         {
-            //weaponSensitivity = DaggerfallUnity.Settings.WeaponSensitivity;
             mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
-            player = transform.gameObject;
-            playerLayerMask = ~(1 << LayerMask.NameToLayer("Player"));
+            player = gameObject;
+
+            playerLayerMask = Physics.DefaultRaycastLayers;
+            playerLayerMask &= ~(1 << LayerMask.NameToLayer("Player"));
+            playerLayerMask &= ~(1 << Physics.IgnoreRaycastLayer);
+
             _gesture = new Gesture();
-            _longestDim = Math.Max(Screen.width, Screen.height);
+            _longestDim = Mathf.Max(Screen.width, Screen.height);
             SetMelee(ScreenWeapon);
         }
 

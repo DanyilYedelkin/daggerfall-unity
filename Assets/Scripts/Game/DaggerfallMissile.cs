@@ -55,6 +55,8 @@ namespace DaggerfallWorkshop.Game
 
         #region Fields
 
+        private static int TouchMask = -1;
+
         const int coldMissileArchive = 376;
         const int fireMissileArchive = 375;
         const int magicMissileArchive = 379;
@@ -390,15 +392,19 @@ namespace DaggerfallWorkshop.Game
 
         public static DaggerfallEntityBehaviour GetEntityTargetInTouchRange(Vector3 aimPosition, Vector3 aimDirection)
         {
-            // Fire ray along caster facing
-            // Origin point of ray is set back slightly to fix issue where strikes against target capsules touching caster capsule do not connect
+            // Nudge origin slightly forward to avoid intersecting the caster capsule when looking down
+            const float originNudge = 0.01f;
+            Vector3 origin = aimPosition + aimDirection * originNudge;
+
             RaycastHit hit;
-            aimPosition -= aimDirection * 0.1f;
-            Ray ray = new Ray(aimPosition, aimDirection);
-            if (Physics.SphereCast(ray, SphereCastRadius, out hit, TouchRange))
+            Ray ray = new Ray(origin, aimDirection);
+
+            if (Physics.SphereCast(ray, SphereCastRadius, out hit, TouchRange, GetTouchMask(), QueryTriggerInteraction.Ignore))
+            {
                 return hit.transform.GetComponent<DaggerfallEntityBehaviour>();
-            else
-                return null;
+            }
+
+            return null;
         }
 
         #endregion
@@ -464,6 +470,37 @@ namespace DaggerfallWorkshop.Game
 
             impactDetected = true;
             missileReleased = true;
+        }
+
+        /// <summary>
+        /// Returns a cached layer mask for touch targeting. Built lazily to avoid Unity init errors.
+        /// Excludes Player, Ignore Raycast, and Automap so the cast never hits the caster or UI layers.
+        /// </summary>
+        private static int GetTouchMask()
+        {
+            if (TouchMask != -1)
+            {
+                return TouchMask;
+            }
+
+            int mask = Physics.DefaultRaycastLayers;
+
+            int player = LayerMask.NameToLayer("Player");
+            if (player >= 0)
+            {
+                mask &= ~(1 << player);
+            }
+
+            mask &= ~(1 << Physics.IgnoreRaycastLayer);
+
+            int automap = LayerMask.NameToLayer("Automap");
+            if (automap >= 0)
+            {
+                mask &= ~(1 << automap);
+            }
+
+            TouchMask = mask;
+            return TouchMask;
         }
 
         // Get missile aim position from player or enemy mobile

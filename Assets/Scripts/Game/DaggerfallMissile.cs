@@ -14,7 +14,6 @@ using System.Collections.Generic;
 using DaggerfallWorkshop.Utility;
 using DaggerfallWorkshop.Game.MagicAndEffects;
 using DaggerfallWorkshop.Game.Entity;
-using System.Runtime.InteropServices;
 
 namespace DaggerfallWorkshop.Game
 {

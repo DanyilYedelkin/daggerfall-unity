@@ -2,20 +2,23 @@
     "name": "Unity.Postprocessing.Editor.Tests",
     "references": [
         "Unity.Postprocessing.Runtime",
-        "Unity.Postprocessing.Editor"
-    ],
-    "optionalUnityReferences": [
-        "TestAssemblies"
+        "Unity.Postprocessing.Editor",
+        "UnityEngine.TestRunner",
+        "Scripts"
     ],
     "includePlatforms": [
         "Editor"
     ],
     "excludePlatforms": [],
     "allowUnsafeCode": true,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
     "defineConstraints": [
         "UNITY_INCLUDE_TESTS"
-    ]
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

@@ -1,0 +1,33 @@
+{
+    "m_Name": "Settings",
+    "m_Path": "ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json",
+    "m_Dictionary": {
+        "m_DictionaryValues": [
+            {
+                "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "IncludeAssemblies",
+                "value": "{\"m_Value\":\"Scripts,Unity.Addressables,Unity.Addressables.Editor,Unity.Burst,Unity.Burst.CodeGen,Unity.Burst.Editor,Unity.CollabProxy.Editor,Unity.Collections,Unity.InternalAPIEditorBridge.013,Unity.InternalAPIEngineBridge.013,Unity.Jobs,Unity.Jobs.Editor,Unity.Localization,Unity.Localization.Editor,Unity.Mathematics,Unity.Mathematics.Editor,Unity.PerformanceTesting,Unity.PerformanceTesting.Editor,Unity.PlasticSCM.Editor,Unity.Postprocessing.Editor,Unity.Postprocessing.Editor.Tests,Unity.Postprocessing.Runtime,Unity.Postprocessing.Runtime.Tests,Unity.ResourceManager,Unity.Rider.Editor,Unity.ScriptableBuildPipeline,Unity.ScriptableBuildPipeline.Editor,Unity.Settings.Editor,Unity.Sysroot.Linux_x86_64,Unity.SysrootPackage.Editor,Unity.TestTools.CodeCoverage.Editor,Unity.TestTools.CodeCoverage.Editor.OpenCover.Model,Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection,Unity.TextMeshPro,Unity.TextMeshPro.Editor,Unity.Timeline,Unity.Timeline.Editor,Unity.Toolchain.Win-x86_64-Linux-x86_64,Unity.VisualStudio.Editor,UnityEditor.CacheServer,UnityEditor.SpatialTracking,UnityEditor.TestRunner,UnityEditor.UI,UnityEditor.XR.LegacyInputHelpers,UnityEngine.SpatialTracking,UnityEngine.TestRunner,UnityEngine.UI,UnityEngine.XR.LegacyInputHelpers\"}"
+            },
+            {
+                "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "Path",
+                "value": "{\"m_Value\":\"{ProjectPath}/CodeCoverage\"}"
+            },
+            {
+                "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "HistoryPath",
+                "value": "{\"m_Value\":\"{ProjectPath}/CodeCoverage\"}"
+            },
+            {
+                "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "PathsToInclude",
+                "value": "{\"m_Value\":\"\"}"
+            },
+            {
+                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "EnableCodeCoverage",
+                "value": "{\"m_Value\":false}"
+            }
+        ]
+    }
+}

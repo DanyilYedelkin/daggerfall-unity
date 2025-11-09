@@ -5,7 +5,7 @@
 // Source Code:     https://github.com/Interkarma/daggerfall-unity
 // Original Author: Gavin Clayton (interkarma@dfworkshop.net)
 // Contributors:    Numidium
-// 
+//
 // Notes:
 //
 
@@ -165,7 +165,8 @@ namespace DaggerfallWorkshop.Game.Entity
         public uint TimeOfLastSkillTraining { get { return timeOfLastSkillTraining; } set { timeOfLastSkillTraining = value; } }
         public uint TimeOfLastStealthCheck { get { return timeOfLastStealthCheck; } set { timeOfLastStealthCheck = value; } }
         public int StartingLevelUpSkillSum { get { return startingLevelUpSkillSum; } set { startingLevelUpSkillSum = value; } }
-        public int CurrentLevelUpSkillSum { get { return currentLevelUpSkillSum; } internal set { currentLevelUpSkillSum = value; } }
+        public int CurrentLevelUpSkillSum { get { return currentLevelUpSkillSum; }
+            set { currentLevelUpSkillSum = value; } }
         public bool ReadyToLevelUp { get { return readyToLevelUp; } set { readyToLevelUp = value; } }
         public bool OghmaLevelUp { get { return oghmaLevelUp; } set { oghmaLevelUp = value; } }
         public short[] SGroupReputations { get { return sGroupReputations; } set { sGroupReputations = value; } }
@@ -486,8 +487,8 @@ namespace DaggerfallWorkshop.Game.Entity
                 for (uint l = 0; l < (gameMinutes - lastGameMinutes); ++l)
                 {
                     // Catch up time and break if something spawns. Don't spawn encounters while player is swimming in water or on ship (same as classic).
-                    if (!GameManager.Instance.PlayerEnterExit.IsPlayerSwimming && 
-                        !GameManager.Instance.TransportManager.IsOnShip() && 
+                    if (!GameManager.Instance.PlayerEnterExit.IsPlayerSwimming &&
+                        !GameManager.Instance.TransportManager.IsOnShip() &&
                         IntermittentEnemySpawn(l + lastGameMinutes + 1))
                         break;
 

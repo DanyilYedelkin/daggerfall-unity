@@ -4,8 +4,8 @@
 // License:         MIT License (http://www.opensource.org/licenses/mit-license.php)
 // Source Code:     https://github.com/Interkarma/daggerfall-unity
 // Original Author: Gavin Clayton (interkarma@dfworkshop.net)
-// Contributors:    
-// 
+// Contributors:
+//
 // Notes:
 //
 
@@ -874,7 +874,7 @@ namespace DaggerfallWorkshop.Game.Entity
 
         public delegate void OnDeathHandler(DaggerfallEntity entity);
         public event OnDeathHandler OnDeath;
-        protected void RaiseOnDeathEvent()
+        protected virtual void RaiseOnDeathEvent()
         {
             if (OnDeath != null && !quiesce)
                 OnDeath(this);
@@ -950,7 +950,7 @@ namespace DaggerfallWorkshop.Game.Entity
         }
 
         /// <summary>
-        /// Sets the career template for a custom (ie: mod-provided) enemy type. 
+        /// Sets the career template for a custom (ie: mod-provided) enemy type.
         /// </summary>
         /// <param name="enemyId">ID, as defined in EnemyBasics.Enemies</param>
         /// <param name="career">The custom DFCareer template to register</param>
